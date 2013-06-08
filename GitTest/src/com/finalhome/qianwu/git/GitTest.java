@@ -15,7 +15,5 @@ public class GitTest {
 		System.out.println("made some changes the five time");
 		System.out.println("made some changes the 7 time");
 
-		
 	}
-
 }
