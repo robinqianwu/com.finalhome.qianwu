@@ -10,6 +10,7 @@ public class GitTest {
 		System.out.println("git test");
 		System.out.println("made some changes");
 		System.out.println("made some changes again");
+		System.out.println("made some changes the third time");
 	}
 
 }
