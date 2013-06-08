@@ -16,6 +16,7 @@ public class GitTest {
 		System.out.println("made some changes the 7 time");
 		System.out.println("made some changes the 9 time");
 		System.out.println("made some changes the 10 time");
+		System.out.println("made some changes the 11 time");
 
 	}
 }
