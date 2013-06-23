@@ -59,6 +59,7 @@ public class Mitarbeiter implements Serializable
         this.fk_Personen = fk_Personen;
     }
 
+    @Column(name = "fk_Firmen")
     public Long getFk_Firmen()
     {
         return fk_Firmen;
@@ -69,6 +70,7 @@ public class Mitarbeiter implements Serializable
         this.fk_Firmen = fk_Firmen;
     }
 
+    @Column(name = "fk_BeschaeftigunsStatus")
     public Long getFk_BeschaeftigungsStatus()
     {
         return fk_BeschaeftigungsStatus;

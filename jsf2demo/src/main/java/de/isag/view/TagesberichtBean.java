@@ -19,6 +19,8 @@ public class TagesberichtBean implements Serializable
     private String                  tbAuftragsnummer;
     private static List<SelectItem> tbAuftragsnummerItems;
 
+    private List<String[]>          identificationsMerkmalen;
+
     static
     {
         if (tbAuftragsnummerItems == null)
@@ -62,5 +64,25 @@ public class TagesberichtBean implements Serializable
     public void setTbAuftragsnummerItems(List<SelectItem> tbAuftragsnummerItems)
     {
         TagesberichtBean.tbAuftragsnummerItems = tbAuftragsnummerItems;
+    }
+
+    public List<String[]> getIdentificationsMerkmalen()
+    {
+        if (identificationsMerkmalen == null)
+        {
+            identificationsMerkmalen = new ArrayList<String[]>();
+            String[] item1 = new String[]{"1", "2", "3"};
+            String[] item2 = new String[]{"1", "2", "3"};
+            String[] item3 = new String[]{"1", "2", "3"};
+            identificationsMerkmalen.add(item1);
+            identificationsMerkmalen.add(item2);
+            identificationsMerkmalen.add(item3);
+        }
+        return identificationsMerkmalen;
+    }
+
+    public void setIdentificationsMerkmalen(List<String[]> identificationsMerkmalen)
+    {
+        this.identificationsMerkmalen = identificationsMerkmalen;
     }
 }

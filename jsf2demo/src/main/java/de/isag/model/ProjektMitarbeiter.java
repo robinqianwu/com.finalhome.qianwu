@@ -2,11 +2,10 @@ package de.isag.model;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.Id;
 
-@Entity
-@Table(name = "ProjektMitarbeiter")
+// @Entity
+// @Table(name = "ProjektMitarbeiter")
 public class ProjektMitarbeiter implements Serializable
 {
 
@@ -30,6 +29,7 @@ public class ProjektMitarbeiter implements Serializable
         fk_ProjektMitarbeiterStatus = fk_ProjektMiarbeiterStatus;
     }
 
+    @Id
     public Long getPk_ProjektMitarbeiter()
     {
         return pk_ProjektMitarbeiter;

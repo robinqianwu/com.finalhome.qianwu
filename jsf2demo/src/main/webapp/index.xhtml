@@ -18,13 +18,17 @@
    	   
    	   	<h:panelGroup layout="block" style="padding-left: 100px;">
    	   		<ui:include src="isag/_includes/tagesberichtHeader.xhtml"/>
-   	 	</h:panelGroup>
+   	   		
+   	   		<p:spacer height="20px" />
+   	   		<ui:include src="isag/_includes/tagesberichtIdMerkmaleTable.xhtml"/>
+   	   		
+   	   		<p:spacer height="20px" />
+   	   		<ui:include src="isag/_includes/primeFaces_personTable.xhtml"/>
+   	   		
+   	 		<p:spacer height="40" width="0"/>
    	 	
-   	 	<!-- <p:spacer height="40" width="0"/>
-   	 	
-   	 	<h:panelGroup layout="block" style="padding-left: 100px;">
    	   		<ui:include src="isag/_includes/primeFaces_personInputTable.xhtml"/>
-   	 	</h:panelGroup> -->
+   	 	</h:panelGroup>
    	 	
 	</ui:define>
 </ui:composition>

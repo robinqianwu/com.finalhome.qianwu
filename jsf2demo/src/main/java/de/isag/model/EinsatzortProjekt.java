@@ -2,11 +2,10 @@ package de.isag.model;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.Id;
 
-@Entity
-@Table(name = "EinsatzortProjekt")
+// @Entity
+// @Table(name = "EinsatzortProjekt")
 public class EinsatzortProjekt implements Serializable
 {
     private static final long serialVersionUID = 6730498691485616556L;
@@ -29,6 +28,7 @@ public class EinsatzortProjekt implements Serializable
         this.einsatzortName = einsatzortName;
     }
 
+    @Id
     public Long getPk_EinsatzortProjekt()
     {
         return pk_EinsatzortProjekt;

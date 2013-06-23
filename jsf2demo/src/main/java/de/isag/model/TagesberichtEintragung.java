@@ -3,11 +3,10 @@ package de.isag.model;
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.Id;
 
-@Entity
-@Table(name = "TagesberichtEintragung")
+// @Entity
+// @Table(name = "TagesberichtEintragung")
 public class TagesberichtEintragung implements Serializable
 {
 
@@ -40,6 +39,7 @@ public class TagesberichtEintragung implements Serializable
         this.pause = pause;
     }
 
+    @Id
     public Long getPk_TagesberichtEintragung()
     {
         return pk_TagesberichtEintragung;

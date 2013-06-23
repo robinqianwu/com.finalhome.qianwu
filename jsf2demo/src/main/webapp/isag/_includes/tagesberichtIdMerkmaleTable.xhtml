@@ -12,23 +12,20 @@
 
 <ui:composition>
 
-	<p:panel>  
-        <h:panelGrid columns="4" cellpadding="5">  
-            <h:outputText value="Datum: " />  
-            <p:calendar id="tbDatum" value="#{tagesberichtBean.tbDatum}" showOn="button" style="width: 30px;"/>
-             
-            <h:outputLabel for="tbAuftragsnummer" value="Auftragsnummer: " />  
-            <p:selectOneMenu id="tbAuftragsnummer" value="#{tagesberichtBean.tbAuftragsnummer}" style="width: 150px;">
-	            <f:selectItem itemLabel="Select One" itemValue="one" />  
-	            <f:selectItems value="#{tagesberichtBean.tbAuftragsnummerItems}" />  
-            </p:selectOneMenu> 
-            
-                    
-            <p:commandButton value="Reset" type="reset" />  
-            <!--  <p:commandButton value="Submit" update="display" oncomplete="dialog.show()"/>  -->
+	<p:dataTable var="identification" value="#{tagesberichtBean.identificationsMerkmalen}" rowIndexVar="index">  
+        <p:column headerText="">  
+            <h:outputText value="#{index + 1}" />  
+        </p:column>  
   
-        </h:panelGrid>  
-    </p:panel>
+        <p:column headerText="Artikelnummer">  
+            <h:outputText value="#{identification[1]}" />  
+        </p:column>
+          
+        <p:column headerText="Benenung">  
+            <h:outputText value="#{identification[2]}" />  
+        </p:column>  
+  
+    </p:dataTable> 
 	 
 </ui:composition>
 </html>

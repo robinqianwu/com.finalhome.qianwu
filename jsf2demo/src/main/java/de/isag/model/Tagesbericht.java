@@ -3,11 +3,10 @@ package de.isag.model;
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.Id;
 
-@Entity
-@Table(name = "Tagesbericht")
+// @Entity
+// @Table(name = "Tagesbericht")
 public class Tagesbericht implements Serializable
 {
     private static final long serialVersionUID = 6730498691485616556L;
@@ -34,6 +33,7 @@ public class Tagesbericht implements Serializable
         this.fk_Projekt = fk_Projekt;
     }
 
+    @Id
     public Long getPk_Tagesbericht()
     {
         return pk_Tagesbericht;

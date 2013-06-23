@@ -2,12 +2,10 @@ package de.isag.model;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
-@Entity
-@Table(name = "Ansprechpartner")
+// @Entity
+// @Table(name = "Ansprechpartner")
 public class Ansprechpartner implements Serializable
 {
 
