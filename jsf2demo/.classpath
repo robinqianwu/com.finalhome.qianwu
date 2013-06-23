@@ -38,23 +38,5 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/eysler/.m2/repository/com/sun/faces/jsf-api/2.1.7/jsf-api-2.1.7.jar" sourcepath="C:/Users/eysler/.m2/repository/com/sun/faces/jsf-api/2.1.7/jsf-api-2.1.7-sources.jar">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="maven.groupId" value="com.sun.faces"/>
-			<attribute name="maven.artifactId" value="jsf-api"/>
-			<attribute name="maven.version" value="2.1.7"/>
-			<attribute name="maven.scope" value="compile"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/eysler/.m2/repository/javax/el/el-api/2.2/el-api-2.2.jar">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="maven.groupId" value="javax.el"/>
-			<attribute name="maven.artifactId" value="el-api"/>
-			<attribute name="maven.version" value="2.2"/>
-			<attribute name="maven.scope" value="compile"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
