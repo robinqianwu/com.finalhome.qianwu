@@ -3,6 +3,7 @@ package de.isag.model;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
@@ -33,6 +34,7 @@ public class Ansprechpartner implements Serializable
     /**
      * @return the pk_Ansprechpartner
      */
+    @Id
     public Long getPk_Ansprechpartner()
     {
         return pk_Ansprechpartner;
