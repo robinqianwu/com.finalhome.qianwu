@@ -1,0 +1,38 @@
+10
+
+dir
+47
+svn://localhost/jsf2Project/trunk/jsf_example/src/test/java
+svn://localhost
+
+
+
+2013-05-28T23:04:08.656297Z
+42
+eysler
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+bd8f1f0c-ae01-2944-9b42-ee1532a1aa42
+
+basicTest
+dir
+
+junitTests
+dir
+
+
+
+delete
+
