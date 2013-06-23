@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"      
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+      xmlns:t="http://myfaces.apache.org/tomahawk" 
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<ui:composition>
+	 <p:panel header="Person input table" style="width:650px">  
+        <p:dataTable var="inputPerson" value="#{personTableBean.personenInputList}" rowIndexVar="index"> 
+
+	        <p:column headerText="Person Id">
+	           <h:outputText value="#{index + 1}"/>
+	        </p:column>
+	
+	 		<p:column headerText="Person Kurz Name">
+	            <p:inputText value="#{inputPerson.kurzName}"/>
+	        </p:column>
+	        
+	        <p:column headerText="Person First Name">
+	            <p:inputText value="#{inputPerson.vorname}"/>
+	        </p:column>
+	
+	        <p:column headerText="Person Last Name">
+	            <p:inputText value="#{inputPerson.nachname}"/>
+	        </p:column>
+
+        </p:dataTable>
+        
+        <br/>
+          
+        <p:commandButton value="Reset" type="reset" />
+        <p:commandButton value="Add new line" style="margin-left: 5px;"/>  
+        <p:commandButton value="Save the list" action="#{personBean.savePersonenList}" update="personTable" style="float:right">
+        	<f:setPropertyActionListener target="#{personBean.personenList}" value="#{null}"></f:setPropertyActionListener>
+        </p:commandButton>
+          
+    </p:panel>
+</ui:composition>
+</html>

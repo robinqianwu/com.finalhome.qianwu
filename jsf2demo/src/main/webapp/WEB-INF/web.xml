@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+    xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+ 
+	<display-name>JavaServerFaces</display-name>
+ 
+ 	<!-- default httpSession ttl -->
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
+ 
+ 	<!-- Welcome page -->
+	<welcome-file-list>
+		<welcome-file>index.xhtml</welcome-file>
+	</welcome-file-list>
+	
+	<!-- 	
+	<error-page>
+		<error-code>404</error-code>
+		<location>/error/error.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>403</error-code>
+		<location>/error/error.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/error/error.jsp</location>
+	</error-page>	
+	-->
+	 
+	<!--
+		========================= 
+		myfaces context parameter 
+		
+		http://myfaces.apache.org/core21/myfaces-impl/webconfig.html		
+		http://wiki.apache.org/myfaces/Secure_Your_Application
+		http://wiki.apache.org/myfaces/Performance 
+		
+		=========================
+	-->
+		
+	<!-- Change to "Production" when you are ready to deploy -->
+	<context-param>
+		<param-name>javax.faces.PROJECT_STAGE</param-name>
+		<param-value>Development</param-value>
+	</context-param>
+ 
+	<context-param>
+		<description> Use Documents Saved as *.xhtml for view pages </description>
+		<param-name>javax.faces.FACELETS_VIEW_MAPPINGS</param-name>
+		<param-value>*.xhtml</param-value>
+	</context-param>
+	
+	<!-- <context-param>
+        <param-name>javax.faces.DISABLE_FACELET_JSF_VIEWHANDLER</param-name>
+        <param-value>true</param-value>
+    </context-param> -->
+    
+	<context-param>
+		<description> State saving method: "client" or "server" (= default) See
+            JSF Specification 2.5.2 </description>
+		<param-name>javax.faces.STATE_SAVING_METHOD</param-name>
+		<param-value>server</param-value>
+	</context-param>
+	<context-param>
+		<param-name>javax.faces.DEFAULT_SUFFIX</param-name>
+		<param-value>.xhtml</param-value>
+	</context-param>
+	<context-param>
+		<description> enter all faces configurations for current framework
+            applications (never remove 'framework-faces-config.xml' and 'framework-settings-config.xml'!) 
+        </description>
+		<param-name>javax.faces.CONFIG_FILES</param-name>
+		<param-value>
+			/WEB-INF/faces-config.xml
+		</param-value>
+	</context-param>
+	<context-param> 
+		<description>use special tags with facelets</description> 
+		<param-name>facelets.LIBRARIES</param-name>
+		<param-value>/WEB-INF/facelets/tags/.../xxx.facelet.taglib.xml; </param-value> 
+	</context-param>
+	<context-param>
+		<description>feature that update the configuration when the refresh period has been reached since last update.</description>
+		<param-name>org.apache.myfaces.CONFIG_REFRESH_PERIOD</param-name>
+		<param-value>-1</param-value>
+	</context-param>
+	<context-param>
+		<description>Enable/disable DebugPhaseListener feature, 
+			with provide useful information about ValueHolder 
+			variables (submittedValue, localValue, value) </description>
+		<param-name>org.apache.myfaces.DEBUG_PHASE_LISTENER</param-name>
+		<param-value>true</param-value>
+	</context-param>
+	<context-param>
+		<description> Validate managed beans, navigation rules and ensure that
+            forms are not nested. </description>
+		<param-name>org.apache.myfaces.VALIDATE</param-name>
+		<param-value>true</param-value>
+	</context-param>
+	<context-param>
+		<description> A very common problem in configuring
+            MyFaces-web-applications is that the Extensions-Filter is not
+            configured at all or improperly configured. This parameter will
+            check for a properly configured Extensions-Filter if it is needed by
+            the web-app. In most cases this check will work just fine, there
+            might be cases where an internal forward will bypass the
+            Extensions-Filter and the check will not work. If this is the case,
+            you can disable the check by setting this parameter to false. 
+        </description>
+		<param-name>org.apache.myfaces.CHECK_EXTENSIONS_FILTER</param-name>
+		<param-value>false</param-value>
+	</context-param>
+	<context-param>
+		<description>Change the url-pattern from the ExtensionsFilter Default is "/faces/myFacesExtensionResource"
+             Note: The filter-mapping for ExtensionsFilter, the url-pattern is this value + "/*", else there comes a exception</description>
+		<param-name>org.apache.myfaces.RESOURCE_VIRTUAL_PATH</param-name>
+		<param-value>/faces/myFacesExtensionResource</param-value>
+	</context-param>
+	<context-param>
+		<param-name>org.apache.myfaces.ADD_RESOURCE_CLASS</param-name>
+		<param-value>org.apache.myfaces.component.html.util.StreamingAddResource</param-value>
+	</context-param>
+	<context-param>
+		<description>show facelets like error pages - overwrites "facelets.DEVELOPMENT" (-> LIVE: false)</description>
+		<param-name>org.apache.myfaces.ERROR_HANDLING</param-name>
+		<param-value>true</param-value>
+	</context-param>
+
+	<context-param>
+		<description> If true, a javascript function will be rendered that is
+            able to restore the former vertical scroll on every request.
+            Convenient feature if you have pages with long lists and you do not
+            want the browser page to always jump to the top if you trigger a
+            link or button action that stays on the same page. Default: "false" 
+        </description>
+		<param-name>org.apache.myfaces.AUTO_SCROLL</param-name>
+		<param-value>true</param-value>
+	</context-param>
+
+	<context-param>
+		<description> Only applicable if state saving method is "server" (=
+            default). If true (default) the state will be serialized to a byte
+            stream before it is written to the session. If false the state will
+            not be serialized to a byte stream. (-> LIVE: false) </description>
+		<param-name>org.apache.myfaces.SERIALIZE_STATE_IN_SESSION</param-name>
+		<param-value>false</param-value>
+	</context-param>
+
+	<context-param>
+		<description> Only applicable if state saving method is "server" (=
+            default) and if org.apache.myfaces.SERIALIZE_STATE_IN_SESSION is
+            true (= default). If true (default) the serialized state will be
+            compressed before it is written to the session. If false the state
+            will not be compressed. (-> LIVE: true) </description>
+		<param-name>org.apache.myfaces.COMPRESS_STATE_IN_SESSION</param-name>
+		<param-value>true</param-value>
+	</context-param>
+
+	<context-param>
+		<description> Only applicable if state saving method is "server" (=
+            default). Defines the amount (default = 20) of the latest views are
+            stored in session. (GREIFT NICHT IN RICHFACES -> SUN RI PARAMETER)</description>
+		<param-name>org.apache.myfaces.NUMBER_OF_SEQUENTIAL_VIEWS_IN_SESSION</param-name>
+		<param-value>5</param-value>
+	</context-param>
+
+	<context-param>
+		<description>Template Cache (-> LIVE: -1, or a refresh value in seconds to enable hot deployment of xhtml)</description>
+		<param-name>javax.faces.FACELETS_REFRESH_PERIOD</param-name>
+		<param-value>0</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>javax.faces.FACELETS_SKIP_COMMENTS</param-name>
+		<param-value>true</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>facelets.BUILD_BEFORE_RESTORE</param-name>
+		<param-value>false</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>facelets.RECREATE_VALUE_EXPRESSION_ON_BUILD_BEFORE_RESTORE</param-name>
+		<param-value>false</param-value>
+	</context-param>
+	
+	<!-- START: spring-context configurations -->
+	<context-param>
+		<description>initialize the spring service definitions</description>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:META-INF/spring/springSetting.xml</param-value>
+	</context-param>
+	<!-- END: spring-context configurations -->
+	
+ 	<!-- **************** CONTEXT-LISTENER **************** -->
+	<listener>
+		<description>initializes spring contexts</description>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+ 
+	<!-- 
+		==============
+		servlet filter
+		==============
+	 -->
+	
+	<!-- 
+		========
+		servlets
+		========
+	 -->
+	<servlet>
+		<description>jsf servlet (must be first)</description>
+		<servlet-name>Faces Servlet</servlet-name>
+		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+ 
+	<!-- Map these files with JSF -->
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.xhtml</url-pattern>
+	</servlet-mapping>
+ 
+</web-app>

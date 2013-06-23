@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"      
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+      xmlns:t="http://myfaces.apache.org/tomahawk" 
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>
+	<f:facet name="first">
+        <meta http-equiv="X-UA-Compatible" content="EmulateIE8" />
+        <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+		<title>ISAG Demo</title>
+    </f:facet>
+ 
+    <link type="text/css" rel="stylesheet" href="isag/_css/layout.css" />
+    
+    <f:facet name="last">
+		<!-- <script type="text/javascript" src="isag/_js/jQuery/jquery-2.0.2.min.js"></script>-->
+		<script type="text/javascript" src="isag/_js/isag.js"></script>
+	</f:facet>
+</h:head>
+
+<h:body>
+<h:form prependId="false">
+	<ui:insert name="header">
+		<ui:include src="../_includes/header.xhtml" />
+	</ui:insert>
+	
+	<ui:insert name="body">
+		This text will be replaced with the value from the ui:define body in other xhtml
+	</ui:insert>
+	
+	<ui:insert name="footer">
+		<ui:include src="../_includes/footer.xhtml" />
+	</ui:insert>
+</h:form>
+</h:body>
+
+</html>

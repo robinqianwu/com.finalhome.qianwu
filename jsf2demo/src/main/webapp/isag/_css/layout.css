@@ -1,0 +1,578 @@
+/*
+   --------------------------------
+   BASE-LAYOUT
+   --------------------------------
+*/
+
+body {
+	padding: 0px;
+	margin: 0px;
+	font-family: "@Arial Unicode MS", Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+
+img {
+	border: none;
+}
+
+input {
+	background-color: #fff;
+	/*outline-style: inset;*/
+	/*border-style: inset;*/
+	font-size: 11px;
+}
+
+select {
+	font-size: 11px;
+}
+
+textarea {
+	font-family: "@Arial Unicode MS", Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+
+a {
+	text-decoration: none;
+}
+
+a.frameworkLink {
+	color:#000;
+	font-weight: bold;
+}
+
+table.frameworkLayoutTable {
+	width: 100%;
+	border-collapse: collapse;
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	text-align:  left;	
+}
+
+table.frameworkLayoutTable > thead {
+	background: url(../../_images/layout_01/header_bg.png); /* Pfad relativ zum Ort des CSS (nicht der Seite die das CSS geladen hat) */
+	height: 92px; /* ie6 problem */
+}
+
+table.frameworkLayoutTable > thead th {
+	padding: 0px 20px 0px 20px;
+	margin: 0px;
+}
+
+table.frameworkLayoutTable > tbody td.navigation {
+	padding-left: 20px;
+	padding-top: 10px;
+	vertical-align:  top;
+	width: 235px; /* führt im ie7 zum problem (wenn ein tfoot in der layout-tabelle verwendet wird), dass der abstand zw. nav und content sehr groß ist???*/
+}
+
+table.frameworkLayoutTable > tbody td {
+	vertical-align:  top;
+}
+
+table.frameworkLayoutTable > tbody td.content {
+	padding-left: 30px;
+	padding-right: 20px;
+	padding-top: 23px;
+	padding-bottom: 30px;
+}
+
+div.frameworkLayoutFooter {
+	width: 100%;
+	background: url(../../_images/layout_01/footer_bg.png); /* Pfad relativ zum Ort des CSS (nicht der Seite die das CSS geladen hat) */
+	padding-left: 20px;
+	height: 21px;
+	color: #575835;
+	vertical-align: middle;
+	
+	/*http://de.selfhtml.org/css/eigenschaften/positionierung.htm#position*/
+	position: fixed;
+    bottom: 0px;
+}
+
+/*
+   --------------------------------
+   LOGIN-SCREEN
+   --------------------------------
+*/
+
+table.frameworkLogin {
+	width: 100%;
+	border-collapse: collapse;
+	border: 0px;
+	margin: 0px;
+	padding-top: 0px;
+}
+
+table.frameworkLoginForm {
+      margin-left: 20px;
+      /*margin-top: 130px;*/ /*dynamisch*/
+      width: 210px;
+}
+
+table.frameworkLoginForm td.col1 {
+      width: 100px;
+      text-align: right;
+}
+
+table.frameworkLoginForm td.col2 {
+      width: 100px;
+      text-align: left;
+}
+
+table.frameworkLoginForm td.col3 {
+      width: 50px;
+      text-align: left;
+}
+
+table.frameworkLoginNav1 {
+	width: 200px; 
+	border-collapse: collapse; 
+	border-bottom: 1px solid #807f84; 
+	margin: 0px 0px 0px 20px; 
+}
+
+table.frameworkLoginNav1 > tbody td {
+	border-top: 1px solid #807f84;
+}
+
+table.frameworkLoginNav1 > tbody td a {
+	margin: 0px 0px 0px 15px;
+}
+
+table.frameworkLoginNav2 {
+	width:100%; 
+	border-collapse: collapse; 
+	border-top: 1px solid #807f84; 
+}
+
+a.frameworkLoginNavLink {
+	color: #aaa;
+}
+
+a.frameworkLogin {
+	color: #fff;
+}
+
+label.frameworkLogin {
+	color: #fff;
+}
+
+input.frameworkLogin {
+	border: 1px solid #aaa;
+	width: 120px;
+}
+
+label.frameworkBold {
+	font-weight: bold;
+}
+
+span.frameworkBold {
+	font-weight: bold;
+}
+
+label.frameworkItalic {
+	font-style: italic;
+}
+
+select.frameworkLogin {
+	font-size:10px;
+	width:160px;
+}
+
+/*
+   --------------------------------
+   HEADER-CONTENT
+   --------------------------------
+*/
+
+table.frameworkLayoutTable > thead th table {
+	width: 100%;
+	border-collapse: collapse;
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+}
+
+table.frameworkLayoutTable > thead th table td {
+	border-bottom: 1px solid #807f84;
+	padding: 0px;
+	margin: 0px;
+}
+
+table.frameworkLayoutTable > thead table td.logoLeft {
+	text-align: left;
+}
+
+table.frameworkLayoutTable > thead table td.logoRight {
+	text-align: right;
+}
+
+table.frameworkLayoutTable > thead table td.logoLeft img {
+	vertical-align: top;
+}
+
+table.frameworkLayoutTable > thead table td.logoRight img {
+	vertical-align: middle;
+}
+
+/*
+   --------------------------------
+   NAVIGATION-CONTENT
+   --------------------------------
+*/
+
+table.frameworkLayoutTable > tbody td.navigation a.logout {
+	color: #d68206;
+}
+
+
+table.frameworkLayoutTable > tbody td.navigation form {
+	display: inline;
+}
+
+/*
+   -----------------
+   PanelNavigation2
+   -----------------
+*/
+  
+table.frameworkLayoutTable > tbody td.navigation div#subnavigation_outer {
+	margin: 0px 25px 0px 0px;	
+	width: 100%;
+	border-top: 1px solid #807f84;
+	margin: 7px 0px 7px 0px;
+	padding: 1px 0px 0px 0px;
+	/*border-bottom: 1px solid #807f84;*/ /* panelNavigation2 erzeugt am Ende ein leeres <UL> was beim IE zu einem Abstand der bottom-border führt */
+	background-color: #fff;
+}
+
+table.frameworkLayoutTable > tbody td.navigation div#subnavigation {
+	float: left;
+	width: 100%;
+}
+
+table.frameworkLayoutTable > tbody td.navigation div#subnavigation ul {
+	list-style-type: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+table.frameworkLayoutTable > tbody td.navigation div#subnavigation ul li {
+	margin: 0px;
+	padding: 0px;
+	display: inline;
+}
+
+/* Start: Ebene 1 */
+table.frameworkLayoutTable > tbody td.navigation div#subnavigation ul li a {
+	display: block;
+	color: #000;
+	padding: 2px 20px;
+	border-bottom: 2px solid #fff;
+	background-color: #d5d5cd;
+}
+
+table.frameworkLayoutTable > tbody td.navigation div#subnavigation ul li a:visited {
+	color: #000;
+}
+
+table.frameworkLayoutTable > tbody td.navigation div#subnavigation ul li a:hover {
+	background-color: #aaa;
+}
+/* Ende: Ebene 1 */
+
+/* Start: Ebene 2 */
+table.frameworkLayoutTable > tbody td.navigation div#subnavigation ul ul li a {
+	padding: 2px 20px 2px 30px;
+	border-bottom: 1px solid #807f84;
+	color: #3e3e3e;
+	background-color: #fff;
+}
+
+table.frameworkLayoutTable > tbody td.navigation div#subnavigation ul ul li a.open {
+	background-color: #ededeb;
+	border-bottom: 0px;
+}
+
+table.frameworkLayoutTable > tbody td.navigation div#subnavigation ul ul li a.active {
+	background-color: #ededeb;
+}
+
+table.frameworkLayoutTable > tbody td.navigation div#subnavigation ul ul li a:hover {
+	background-color: #ededeb;
+}
+/* Ende: Ebene 2 */
+
+/* Start: Ebene 3 */
+table.frameworkLayoutTable > tbody td.navigation div#subnavigation ul ul ul li a {
+	border-bottom: 0px;
+}
+
+table.frameworkLayoutTable > tbody td.navigation div#subnavigation ul ul ul li a.open {
+	background-color: #eee;
+}
+
+table.frameworkLayoutTable > tbody td.navigation div#subnavigation ul ul ul li a.active {
+	font-weight: bold;
+	color: #d68206;
+	background-color: #fff;
+}
+
+table.frameworkLayoutTable > tbody td.navigation div#subnavigation ul ul ul li a:hover {
+	background-color: #fff;
+	color: #d68206;
+}
+
+table.frameworkLayoutTable > tbody td.navigation div#subnavigation ul ul li ul li a {
+	padding: 2px 20px 2px 40px;
+	margin: 0px;
+}
+/* Ende: Ebene 3 */
+
+/*
+   -----------------
+*/
+
+/*
+   --------------------------------
+   CONTENT
+   --------------------------------
+*/
+
+/*
+   -----------------
+   Button
+   -----------------
+*/
+
+input.frameworkButton {
+	background-color: #d4d0c7;
+}
+
+input.frameworkButton:hover {
+	background-color: #aaa;
+}
+
+/*
+   -----------------
+   PagingLimit
+   -----------------
+*/
+
+div.frameworkPagingLimit {
+	text-align:right;
+	margin-bottom:8px;
+}
+
+/*
+   -----------------
+   InfoBox
+   -----------------
+*/
+
+div.frameworkInfoBox {
+	
+	border-top: 1px solid #807f84;
+	border-bottom: 1px solid #807f84;
+	color: #d68206;
+	margin: 8px 0px 8px 0px;
+	padding: 5px;
+}
+
+div.frameworkInfoBox > table.frameworkInfoBoxPaging {
+	border-collapse: collapse;
+	border-spacing: 0px;
+	border: 0px;
+	color: #000;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+div.frameworkInfoBox > table.frameworkInfoBoxPaging td {
+	margin: 0px;
+	padding: 0px;	
+}
+
+div.frameworkInfoBox > table.frameworkInfoBoxPaging td.one {
+	color: #d68206;
+	text-align: left;
+	width: 60%;
+}
+
+div.frameworkInfoBox > table.frameworkInfoBoxPaging td.two {
+	text-align: right;
+	width: 20%;
+}
+
+div.frameworkInfoBox > table.frameworkInfoBoxPaging td.three {
+	text-align: right;
+	font-weight: bold;
+	width: 20%;
+}
+
+div.frameworkInfoBox > table.frameworkInfoBoxPaging td.three a {
+	color: #000;
+	font-weight: normal;
+	margin: 0px;
+	padding: 0px;
+}
+
+div.frameworkInfoBox > table.frameworkInfoBoxPaging table {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0px;
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	/*display: inline;*/
+}
+
+div.frameworkInfoBox > table.frameworkInfoBoxPaging table td {
+	margin: 0px;
+	padding: 0px;
+}
+
+/*
+   -----------------
+   Breadcrumb
+   -----------------
+*/
+.frameworkBreadcrumb {
+	color: #969696;
+}
+
+a.frameworkBreadcrumb: hover {
+	color: #555;
+}
+
+/*
+   -----------------
+   Messages
+   -----------------
+*/
+
+.frameworkInfo {
+	font-weight: normal;
+	color: black;
+	font-style: italic;
+}
+
+.frameworkError {
+	font-weight: bold;
+	color: black;
+}
+
+
+/*
+   -----------------
+   DataTable
+   -----------------
+*/
+table.frameworkDataList {
+	border: 0px;
+	border-collapse: collapse;
+	width: 100%;
+	padding: 0px;
+	margin: 0px
+}
+
+table.frameworkDataList th {
+	background-color: #e1e1e1;
+	font-weight: normal;
+	text-align:  left;
+}
+
+table.frameworkDataList th a {
+/*	color: inherit;*/
+	color: #000;
+}
+
+table.frameworkDataList tr.row1 {
+	border-bottom: 1px solid #807f84;
+}
+
+table.frameworkDataList tr.row2 {
+	border-bottom: 1px solid #807f84;
+	/*background-color: #f0f0f0;*/
+}
+
+/*
+   -----------------
+   Border-Div
+   -----------------
+*/
+
+div.frameworkImageBorder
+{
+	padding:3px;
+	border: 1px solid #ccc;
+}
+
+/*
+   --------------------------------
+   Rich-TabPanel
+   --------------------------------
+*/
+
+.frameworkTabPanel td {
+	border-bottom-color: #807f84;
+	background-image: none;
+	border-top-color: #807f84;
+}
+
+.frameworkTab {
+	background-color: #fff;	
+	background-image: none;
+	border-bottom-color: #807f84;
+	border-left-color: #807f84;
+	border-right-color: #807f84;
+	border-top-color: #807f84;
+	border-top: 0px;
+}
+
+/*
+   --------------------------------
+   Rich-Toggle-Panel
+   --------------------------------
+*/
+
+.frameworkTogglePanel
+{
+	border-color: #807f84;
+}
+
+.frameworkTogglePanel div.dr-stglpnl-h 
+{
+	background-color: #fff;	
+	background-image: none;
+	border: 0px;
+}
+
+/*
+   --------------------------------
+   DEBUG
+   --------------------------------
+*/
+
+div.frameworkDebug {
+	position: absolute;
+	top: 5px;
+	left: 700px;
+	width: 270px;
+ 	border: 1px dotted #aaa;
+ 	color: #aaa;	
+}
+
+div.frameworkDebug a {
+ 	color: #aaa;	
+}
+
+div.frameworkDebug a: hover {
+	font-weight: bold;
+}
+
+div.frameworkDebug form {
+ 	display: inline;
+}
