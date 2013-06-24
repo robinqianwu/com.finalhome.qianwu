@@ -14,12 +14,25 @@
 
 	<h:panelGroup layout="block" styleClass="clearfix headercontainer">
 		<h:panelGroup layout="block" styleClass="firmaIcons">
+			<p:spacer width = "100px"></p:spacer>
 			<h:graphicImage value="isag/_images/header/ISAG1.png"></h:graphicImage>
+			<p:spacer width = "70px"></p:spacer>
+			<h:graphicImage value="isag/_images/header/ISAG2.png"></h:graphicImage>
+			<p:spacer width = "150px"></p:spacer>
+			<h:graphicImage value="isag/_images/header/ISAG3.png"></h:graphicImage>
+			<p:spacer width = "150px"></p:spacer>
+			<h:graphicImage value="isag/_images/header/ISAG4.png"></h:graphicImage>
+			<p:spacer width = "70px"></p:spacer>
+			<h:graphicImage value="isag/_images/header/ISAG5.png"></h:graphicImage>
 		</h:panelGroup>
 		<h:panelGroup layout="block" styleClass="tagesberichtTitle">
-			<h:outputText value="Tagebericht mit Fehlermerkmalen" styleClass="titleClass"/>
-			<p:spacer width="30px"/>
-			<h:outputText value="TB" styleClass="titleClass"/>
+			<h:dataTable id = "titelTable"  border="1">
+				<f:facet name="header">
+					<h:outputText value="Tagebericht mit Fehlermerkmalen" styleClass="titleClass"/>
+					<p:spacer width="30px"/>
+					<h:outputText value="TB" styleClass="titleClass"/>
+				</f:facet>
+			</h:dataTable>
 		</h:panelGroup>
 	</h:panelGroup>
 	
