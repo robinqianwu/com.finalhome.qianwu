@@ -11,8 +11,8 @@
       xmlns:c="http://java.sun.com/jsp/jstl/core">
 
 <ui:composition>
-	 <p:panel header="Person input table" style="width:650px">  
-        <p:dataTable var="inputPerson" value="#{personTableBean.personenInputList}" rowIndexVar="index"> 
+	 <p:panel header="Person input table" style="width:650px" id="tbInputPersonPanel">  
+        <p:dataTable var="inputPerson" value="#{personTableBean.personenInputList}" rowIndexVar="index" id="tbInputPersonTable"> 
 
 	        <p:column headerText="Person Id">
 	           <h:outputText value="#{index + 1}"/>
@@ -30,12 +30,17 @@
 	            <p:inputText value="#{inputPerson.nachname}"/>
 	        </p:column>
 
+			<p:column headerText="" width="10">
+	            <p:commandButton  value="-" styleClass="deleteButton" action="#{personTableBean.deletePerson}" update="@form" ajax="true" >
+	            	<f:setPropertyActionListener target="#{personTableBean.selectedPersonen}" value="#{inputPerson}"/>
+	            </p:commandButton>
+	        </p:column>
         </p:dataTable>
         
         <br/>
           
-        <p:commandButton value="Reset" type="reset" />
-        <p:commandButton value="Add new line" style="margin-left: 5px;"/>  
+        <p:commandButton value="Reset" type="reset" update="tbInputPersonTable" ajax="true"/>
+        <p:commandButton value="Add new line" action="#{personTableBean.addLine}" update="tbInputPersonTable" ajax="true" style="margin-left: 5px;"/>  
         <p:commandButton value="Save the list" action="#{personBean.savePersonenList}" update="personTable" style="float:right">
         	<f:setPropertyActionListener target="#{personBean.personenList}" value="#{null}"></f:setPropertyActionListener>
         </p:commandButton>

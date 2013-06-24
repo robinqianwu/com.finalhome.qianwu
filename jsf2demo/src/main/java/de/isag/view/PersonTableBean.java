@@ -16,6 +16,7 @@ public class PersonTableBean implements Serializable
     private static final long serialVersionUID = -8729798601613552153L;
 
     private List<Personen>    personenInputList;
+    private Personen          selectedPersonen;
 
     public PersonTableBean()
     {}
@@ -41,5 +42,47 @@ public class PersonTableBean implements Serializable
             personenInputList.add(personen6);
         }
         return personenInputList;
+    }
+
+    public void addLine()
+    {
+        if (personenInputList != null)
+        {
+            personenInputList.add(new Personen("", "", ""));
+        }
+    }
+
+    public void deletePerson()
+    {
+        if (getSelectedPersonen() != null && getPersonenInputList() != null && !getPersonenInputList().isEmpty())
+        {
+            Personen deletePerson = null;
+
+            for ( Personen person : personenInputList)
+            {
+                if (selectedPersonen.getVorname() != null && person.getVorname() != null
+                        && selectedPersonen.getVorname().equals(person.getVorname()) && selectedPersonen.getNachname() != null
+                        && person.getNachname() != null && selectedPersonen.getNachname().equals(person.getNachname()))
+                {
+                    deletePerson = person;
+                    break;
+                }
+            }
+
+            if (deletePerson != null)
+            {
+                personenInputList.remove(deletePerson);
+            }
+        }
+    }
+
+    public Personen getSelectedPersonen()
+    {
+        return selectedPersonen;
+    }
+
+    public void setSelectedPersonen(Personen selectedPersonen)
+    {
+        this.selectedPersonen = selectedPersonen;
     }
 }
