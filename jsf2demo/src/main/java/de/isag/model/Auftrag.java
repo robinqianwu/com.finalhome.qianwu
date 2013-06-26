@@ -2,10 +2,15 @@ package de.isag.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-// @Entity
-// @Table(name = "Auftrag")
+@Entity
+@Table(name = "auftrag")
 public class Auftrag implements Serializable
 {
     private static final long serialVersionUID = 6730498691485616556L;
@@ -29,6 +34,8 @@ public class Auftrag implements Serializable
     }
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "pk_Auftrag")
     public Long getPk_Auftrag()
     {
         return pk_Auftrag;
@@ -39,6 +46,7 @@ public class Auftrag implements Serializable
         this.pk_Auftrag = pk_Auftrag;
     }
 
+    @Column(name = "fk_Angebot")
     public Long getFk_Angebot()
     {
         return fk_Angebot;
@@ -49,6 +57,7 @@ public class Auftrag implements Serializable
         this.fk_Angebot = fk_Angebot;
     }
 
+    @Column(name = "fk_Firmen")
     public Long getFk_Firmen()
     {
         return fk_Firmen;
@@ -59,6 +68,7 @@ public class Auftrag implements Serializable
         this.fk_Firmen = fk_Firmen;
     }
 
+    @Column(name = "auftragsbezeichnung")
     public String getAuftragsbezeichnung()
     {
         return auftragsbezeichnung;

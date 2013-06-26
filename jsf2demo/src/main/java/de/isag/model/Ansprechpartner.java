@@ -2,10 +2,15 @@ package de.isag.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-// @Entity
-// @Table(name = "Ansprechpartner")
+@Entity
+@Table(name = "Ansprechpartner")
 public class Ansprechpartner implements Serializable
 {
 
@@ -29,70 +34,47 @@ public class Ansprechpartner implements Serializable
         this.fk_AnsprechpartnerStatus = fk_AnsprechpartnerStatus;
     }
 
-    /**
-     * @return the pk_Ansprechpartner
-     */
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "pk_Ansprechpartner")
     public Long getPk_Ansprechpartner()
     {
         return pk_Ansprechpartner;
     }
 
-    /**
-     * @param pk_Ansprechpartner
-     *            the pk_Ansprechpartner to set
-     */
     public void setPk_Ansprechpartner(Long pk_Ansprechpartner)
     {
         this.pk_Ansprechpartner = pk_Ansprechpartner;
     }
 
-    /**
-     * @return the fk_Mitarbeiter
-     */
+    @Column(name = "fk_Mitarbeiter")
     public Long getFk_Mitarbeiter()
     {
         return fk_Mitarbeiter;
     }
 
-    /**
-     * @param fk_Mitarbeiter
-     *            the fk_Mitarbeiter to set
-     */
     public void setFk_Mitarbeiter(Long fk_Mitarbeiter)
     {
         this.fk_Mitarbeiter = fk_Mitarbeiter;
     }
 
-    /**
-     * @return the fk_Projekt
-     */
+    @Column(name = "fk_Projekt")
     public Long getFk_Projekt()
     {
         return fk_Projekt;
     }
 
-    /**
-     * @param fk_Projekt
-     *            the fk_Projekt to set
-     */
     public void setFk_Projekt(Long fk_Projekt)
     {
         this.fk_Projekt = fk_Projekt;
     }
 
-    /**
-     * @return the fk_AnsprechpartnerStatus
-     */
+    @Column(name = "fk_AnsprechpartnerStatus")
     public Long getFk_AnsprechpartnerStatus()
     {
         return fk_AnsprechpartnerStatus;
     }
 
-    /**
-     * @param fk_AnsprechpartnerStatus
-     *            the fk_AnsprechpartnerStatus to set
-     */
     public void setFk_AnsprechpartnerStatus(Long fk_AnsprechpartnerStatus)
     {
         this.fk_AnsprechpartnerStatus = fk_AnsprechpartnerStatus;
