@@ -19,14 +19,19 @@
              
             <h:outputLabel for="tbAuftrag" value="Auftrag: " />  
             <p:selectOneMenu id="tbAuftrag" value="#{tagesberichtBean.tbAuftragId}" style="width: 150px;" ><!-- valueChangeListener="#{tagesberichtBean.tbLoadFirmen}"> -->
-            	<p:ajax event="change" listener="#{tagesberichtBean.tbLoadFirmen}" update="tbFirmen" />
+            	<p:ajax event="change" listener="#{tagesberichtBean.tbLoadFirmen}" update="tbFirmen,tbEinsatzort" />
 	            <f:selectItem itemLabel="Select One" itemValue="0" />  
 	            <f:selectItems value="#{tagesberichtBean.tbAuftragsnummerItems}" />  
             </p:selectOneMenu>
             
             <h:outputLabel for="tbFirmen" value="Firmen: " />
-            <p:selectOneMenu id="tbFirmen" value="#{tagesberichtBean.tbFirmen}" style="width: 150px;">
+            <p:selectOneMenu id="tbFirmen" value="#{tagesberichtBean.tbFirmenId}" style="width: 150px;">
 	            <f:selectItems value="#{tagesberichtBean.tbFirmenItems}" />  
+            </p:selectOneMenu>
+            
+            <h:outputLabel for="tbEinsatzort" value="Einsatzort: " />
+            <p:selectOneMenu id="tbEinsatzort" value="#{tagesberichtBean.tbEinsatzortProjektId}" style="width: 150px;">
+	            <f:selectItems value="#{tagesberichtBean.tbEinsatzortProjekts}" />  
             </p:selectOneMenu>
             
                     

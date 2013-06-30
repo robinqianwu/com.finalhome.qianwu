@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -15,22 +16,30 @@ import org.apache.log4j.Logger;
 
 import de.isag.component.jpa.IsagDemoImp;
 import de.isag.model.Auftrag;
+import de.isag.model.EinsatzortProjekt;
 import de.isag.model.Firmen;
 
 @ManagedBean
 @SessionScoped
 public class TagesberichtBean implements Serializable
 {
-    private static final long       serialVersionUID = -9112425584264761337L;
-    private static final Logger     logger           = Logger.getLogger(TagesberichtBean.class);
+    private static final long       serialVersionUID     = -9112425584264761337L;
+    private static final Logger     logger               = Logger.getLogger(TagesberichtBean.class);
 
     private static IsagDemoImp      isag;
     private Date                    tbDatum;
+
     private Auftrag                 tbAuftrag;
     private Long                    tbAuftragId;
     private static List<SelectItem> tbAuftragsnummerItems;
+
     private Firmen                  tbFirmen;
-    private List<SelectItem>        tbFirmenItems    = new ArrayList<SelectItem>();
+    private Long                    tbFirmenId;
+    private List<SelectItem>        tbFirmenItems        = new ArrayList<SelectItem>();
+
+    private EinsatzortProjekt       tbEinsatzortProjekt;
+    private Long                    tbEinsatzortProjektId;
+    private List<SelectItem>        tbEinsatzortProjekts = new ArrayList<SelectItem>();
 
     private List<String[]>          identificationsMerkmalen;
 
@@ -77,6 +86,8 @@ public class TagesberichtBean implements Serializable
         {
             // TODO:: should be change to findbyid
             tbFirmenItems.clear();
+            tbEinsatzortProjekts.clear();
+
             for ( Auftrag auftrag : getIsag().getAuftrags())
             {
                 if (auftrag.getPk_Auftrag().equals(tbAuftragId))
@@ -88,14 +99,25 @@ public class TagesberichtBean implements Serializable
 
             if (tbAuftrag != null)
             {
-                SelectItem si = new SelectItem(tbAuftrag.getFirmen(), tbAuftrag.getFirmen().getKurzZeichen());
+                Firmen f = tbAuftrag.getFirmen();
+
+                SelectItem si = new SelectItem(f.getPk_Firmen(), f.getKurzZeichen());
                 tbFirmenItems.add(si);
+
+                Set<EinsatzortProjekt> eps = f.getEinsatzortProjekts();
+                for ( Iterator<EinsatzortProjekt> it = eps.iterator(); it.hasNext();)
+                {
+                    EinsatzortProjekt ep = it.next();
+                    SelectItem einsatzSi = new SelectItem(ep.getPk_EinsatzortProjekt(), ep.getEinsatzortName());
+                    tbEinsatzortProjekts.add(einsatzSi);
+                }
             }
         }
         else
         {
             tbAuftrag = null;
             tbFirmenItems.clear();
+            tbEinsatzortProjekts.clear();
         }
     }
 
@@ -169,6 +191,16 @@ public class TagesberichtBean implements Serializable
         this.tbFirmen = tbFirmen;
     }
 
+    public Long getTbFirmenId()
+    {
+        return tbFirmenId;
+    }
+
+    public void setTbFirmenId(Long tbFirmenId)
+    {
+        this.tbFirmenId = tbFirmenId;
+    }
+
     public List<SelectItem> getTbFirmenItems()
     {
         return tbFirmenItems;
@@ -177,5 +209,35 @@ public class TagesberichtBean implements Serializable
     public void setTbFirmenItems(List<SelectItem> tbFirmenItems)
     {
         this.tbFirmenItems = tbFirmenItems;
+    }
+
+    public List<SelectItem> getTbEinsatzortProjekts()
+    {
+        return tbEinsatzortProjekts;
+    }
+
+    public void setTbEinsatzortProjekts(List<SelectItem> tbEinsatzortProjekts)
+    {
+        this.tbEinsatzortProjekts = tbEinsatzortProjekts;
+    }
+
+    public EinsatzortProjekt getTbEinsatzortProjekt()
+    {
+        return tbEinsatzortProjekt;
+    }
+
+    public void setTbEinsatzortProjekt(EinsatzortProjekt tbEinsatzortProjekt)
+    {
+        this.tbEinsatzortProjekt = tbEinsatzortProjekt;
+    }
+
+    public Long getTbEinsatzortProjektId()
+    {
+        return tbEinsatzortProjektId;
+    }
+
+    public void setTbEinsatzortProjektId(Long tbEinsatzortProjektId)
+    {
+        this.tbEinsatzortProjektId = tbEinsatzortProjektId;
     }
 }
