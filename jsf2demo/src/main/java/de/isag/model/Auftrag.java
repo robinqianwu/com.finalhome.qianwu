@@ -2,11 +2,14 @@ package de.isag.model;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -19,6 +22,10 @@ public class Auftrag implements Serializable
     private Long              fk_Angebot;
     private Long              fk_Firmen;
     private String            auftragsbezeichnung;
+
+    private Angebot           angebot          = new Angebot();
+
+    private Firmen            firmen           = new Firmen();
 
     public Auftrag()
     {
@@ -79,4 +86,27 @@ public class Auftrag implements Serializable
         this.auftragsbezeichnung = auftragsbezeichnung;
     }
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "fk_Angebot", nullable = false, referencedColumnName = "pk_Angebot", updatable = false, insertable = false)
+    public Angebot getAngebot()
+    {
+        return angebot;
+    }
+
+    public void setAngebot(Angebot angebot)
+    {
+        this.angebot = angebot;
+    }
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "fk_Firmen", nullable = false, referencedColumnName = "pk_Firmen", updatable = false, insertable = false)
+    public Firmen getFirmen()
+    {
+        return firmen;
+    }
+
+    public void setFirmen(Firmen firmen)
+    {
+        this.firmen = firmen;
+    }
 }

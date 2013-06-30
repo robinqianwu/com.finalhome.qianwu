@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import de.isag.model.Auftrag;
 import de.isag.model.Personen;
 
 public class IsagDemoImp implements IsagDemoInterface
@@ -28,6 +29,14 @@ public class IsagDemoImp implements IsagDemoInterface
         this.em = em;
     }
 
+    public void closeEm()
+    {
+        if (em != null)
+        {
+            em.close();
+        }
+    }
+
     public IsagDemoImp()
     {
         em = getEm();
@@ -47,6 +56,14 @@ public class IsagDemoImp implements IsagDemoInterface
         @SuppressWarnings("unchecked")
         List<Personen> persons = em.createQuery("from Personen").getResultList();
         return persons;
+    }
+
+    @Override
+    public List<Auftrag> getAuftrags()
+    {
+        @SuppressWarnings("unchecked")
+        List<Auftrag> auftrags = em.createQuery("from Auftrag").getResultList();
+        return auftrags;
     }
 
 }

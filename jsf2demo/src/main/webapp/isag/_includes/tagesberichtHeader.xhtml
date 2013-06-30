@@ -12,16 +12,22 @@
 
 <ui:composition>
 
-	<p:panel>  
+	<p:panel id="tagesberichtHeader">  
         <h:panelGrid columns="4" cellpadding="5">  
             <h:outputText value="Datum: " />  
             <p:calendar id="tbDatum" value="#{tagesberichtBean.tbDatum}" showOn="button" style="width: 30px;"/>
              
-            <h:outputLabel for="tbAuftragsnummer" value="Auftragsnummer: " />  
-            <p:selectOneMenu id="tbAuftragsnummer" value="#{tagesberichtBean.tbAuftragsnummer}" style="width: 150px;">
-	            <f:selectItem itemLabel="Select One" itemValue="one" />  
+            <h:outputLabel for="tbAuftrag" value="Auftrag: " />  
+            <p:selectOneMenu id="tbAuftrag" value="#{tagesberichtBean.tbAuftragId}" style="width: 150px;" ><!-- valueChangeListener="#{tagesberichtBean.tbLoadFirmen}"> -->
+            	<p:ajax event="change" listener="#{tagesberichtBean.tbLoadFirmen}" update="tbFirmen" />
+	            <f:selectItem itemLabel="Select One" itemValue="0" />  
 	            <f:selectItems value="#{tagesberichtBean.tbAuftragsnummerItems}" />  
-            </p:selectOneMenu> 
+            </p:selectOneMenu>
+            
+            <h:outputLabel for="tbFirmen" value="Firmen: " />
+            <p:selectOneMenu id="tbFirmen" value="#{tagesberichtBean.tbFirmen}" style="width: 150px;">
+	            <f:selectItems value="#{tagesberichtBean.tbFirmenItems}" />  
+            </p:selectOneMenu>
             
                     
             <p:commandButton value="Reset" type="reset" />  
