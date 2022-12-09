@@ -16,7 +16,7 @@
 	</repositories>
 	
   <properties>
-	<springVersion>3.0.6.RELEASE</springVersion>
+	<springVersion>6.0.0</springVersion>
 	<hibernateVersion>3.6.9.Final</hibernateVersion>
 	<!--<richfacesVersion>4.1.0.Final</richfacesVersion>-->
   </properties>
